@@ -4,11 +4,16 @@
     .thumb-slider {
         height: 400px;
     }
+
+    a.video-link{
+        box-shadow:none;
+        background-color:purple;
+    }
 </style>
 <section class="text-center container">
     @if (State.Live.IsLive)
     {
-        <LiveWidget Title="@State.Live.Title" Summary="" Link="@State.Live.Link" />
+        <LiveWidget Title="@State.Live.Title" Link="@State.Live.Link" />
     }
     else
     {

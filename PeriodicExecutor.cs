@@ -28,7 +28,7 @@ public class PeriodicExecutor : IDisposable
         {
             // Initiate a Timer
             _Timer = new System.Timers.Timer();
-            _Timer.Interval = 1000;  // every 5 mins
+            _Timer.Interval = 30000;  // every 5 mins
             _Timer.Elapsed += HandleTimer;
             _Timer.AutoReset = true;
             _Timer.Enabled = true;

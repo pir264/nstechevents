@@ -1,5 +1,6 @@
 ﻿using System.Net.Http.Json;
-
+using System.Text;
+using System.Text.Json;
 
 public class StateService
 {
@@ -11,7 +12,13 @@ public class StateService
         this.httpClient = httpClient;
 
     }
-    public async Task<State> GetLatest() => await httpClient.GetFromJsonAsync<State>("https://raw.githubusercontent.com/nederlandsespoorwegen/nstechevents/data/techtalks.json");
+    public async Task<State> GetLatest()
+    {
+        var githubFile =  await httpClient.GetFromJsonAsync<GithubFile>("https://api.github.com/repos/nederlandsespoorwegen/nstechevents/contents/techtalks.json?ref=data");
+        var content = Convert.FromBase64String(githubFile.Content);
+        var state = JsonSerializer.Deserialize<State>(content, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        return state;   
+    }
     
 
 }

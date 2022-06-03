@@ -3,10 +3,18 @@
 
 <PageTitle>NS Tech Events - TechTalks</PageTitle>
 <section class="text-center container">
+    @if (State.Live.IsLive)
+    {
+        <LiveWidget Title="@State.Live.Title" Link="@State.Live.Link" />
+    }
+    else
+    {
 
-        <LiveWidget/>
+        <iframe width="853" height="480" src="https://web.microsoftstream.com/embed/video/c641050f-5232-434e-95ad-4ac681acef74?autoplay=false&showinfo=false" allowfullscreen style="border:none;"></iframe>
 
-        </section>
+
+    }
+</section>
 
     
 <div>
@@ -18,3 +26,7 @@
     </div>
 </div>
 
+@code {
+    [CascadingParameter]
+    protected State? State { get; set; }
+    }
