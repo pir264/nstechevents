@@ -1,10 +1,14 @@
 ﻿@page "/techtalks"
-
+@inject StateService stateService
 
 <PageTitle>NS Tech Events - TechTalks</PageTitle>
+<section class="text-center container">
 
+        <LiveWidget/>
 
-<LiveWidget/>
+        </section>>
+
+    
 <div>
     <div style='position: relative; padding-bottom: 80%;  overflow: hidden;'>
         <iframe width="100%" class="iframe"
@@ -13,3 +17,4 @@
             style='border:none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100%; max-width: 100%;'></iframe>
     </div>
 </div>
+

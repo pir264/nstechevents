@@ -20,14 +20,13 @@
         color: #90EE90;
     }
 </style>
-<section class="text-center container">
+
     <a href="#" class="live-widget row py-5 ">
        
         <div class="col-lg-6 col-md-8 mx-auto">
             <span class="badge text-bg-danger">NOW LIVE</span>
-            <h1 class="fw-light">TechTalks June 2022</h1>
-            <p class="lead">Something short and leading about the collection below—its contents, the creator,
-                etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+            <h1 class="fw-light">@Title</h1>
+            <p class="lead">@Summary</p>
         
                 
                 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="play-button bi bi-play-circle-fill" viewBox="0 0 16 16">
@@ -38,5 +37,13 @@
         </div>
     
     </a>
-</section>
+
+    @code {
+        [Parameter]
+        public string Title { get; set; }
+        [Parameter]
+        public string Summary { get; set; }
+        [Parameter]
+        public string Link { get; set; }
+    }
 

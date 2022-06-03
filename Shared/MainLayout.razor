@@ -1,12 +1,15 @@
-﻿@inherits LayoutComponentBase
+﻿@inject PeriodicExecutor PeriodicExecutor
+@inject StateService stateService
+@inherits LayoutComponentBase
 
+<CascadingValue Value="state">
 <header class="p-3 bg-dark text-white">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         
         
         
-
+         
         <NavMenu/>
 
        
@@ -25,14 +28,33 @@
   </div>
 
 </main>
-
+</CascadingValue>
 <footer class="text-muted py-5">
   <div class="container">
-    <p class="float-end mb-1">
-      <a href="#">Back to top</a>
-    </p>
-    <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-    <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="/docs/5.1/getting-started/introduction/">getting started guide</a>.</p>
+    <p>Powered by TOPAAS</p>
   </div>
 </footer>
 
+@code {
+    State state = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        PeriodicExecutor.StartExecuting();
+        PeriodicExecutor.JobExecuted += HandleJobExecuted;
+
+        //stateOptions.OnChange(Test);
+        state = await stateService.GetLatest();
+        base.StateHasChanged();
+    }
+    public void Dispose()
+    {
+        PeriodicExecutor.JobExecuted -= HandleJobExecuted;
+    }
+
+    void HandleJobExecuted(object sender, JobExecutedEventArgs e)
+    {
+        state = e.LatestState;
+        base.StateHasChanged();
+    }
+}

@@ -1,7 +1,9 @@
-﻿<style>
+﻿@using Microsoft.Extensions.Options
+
+<style>
     .logo {
         width: 50px;
-        height: 50px;
+        height: 40px;
         background-image: url('img/topaas-logo.png');
         background-size: 50px;
         background-repeat: no-repeat;
@@ -11,30 +13,36 @@
 
     .nav-link {
         color: #fff;
-        
         font-weight: bold;
         text-decoration: none;
     }
 </style>
 
+
 <a href="/" class="logo">
-    
+
 </a>
 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+
     <li>
-        <NavLink class="nav-link px-2 text-white" href="" Match="NavLinkMatch.All">Live
+        <NavLink class="nav-link px-2 text-white" href="techtalks">
+            TechTalks
+            @if (State.Live.IsLive)
+            {
+                <span class="badge rounded-pill bg-danger">
+                    LIVE
+                </span>
+            }
         </NavLink>
     </li>
     <li>
-        <NavLink class="nav-link px-2 text-white" href="techtalks">TechTalks
+        <NavLink class="nav-link px-2 text-white" href="techbits">
+            TechBits
         </NavLink>
     </li>
     <li>
-        <NavLink class="nav-link px-2 text-white" href="techbits">TechBits
-        </NavLink>
-    </li>
-<li>
-        <NavLink class="nav-link px-2 text-white" href="archive">Archive
+        <NavLink class="nav-link px-2 text-white" href="archive">
+            Archive
         </NavLink>
     </li>
 </ul>
@@ -44,12 +52,23 @@
 
 
 @code {
+    [CascadingParameter]
+    protected State? State { get; set; }
+    
+    private bool isLive = false;
     private bool collapseNavMenu = true;
-
+    
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
     }
+
+
+
+   
+
+   
+  
 }
