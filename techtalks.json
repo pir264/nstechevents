@@ -1,7 +1,8 @@
 {
     "live": {
-        "title":"Test",
-        "link":"http://www.google.com",
-        "isLive":true
+      "title": "Test Event",
+      "link": "http://example.com",
+      "start": "2022-06-03T02:50:00.000Z",
+      "end": "2022-06-03T09:50:00.000Z"
     }
 }
