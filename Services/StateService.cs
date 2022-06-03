@@ -11,7 +11,7 @@ public class StateService
         this.httpClient = httpClient;
 
     }
-    public async Task<State> GetLatest() => await httpClient.GetFromJsonAsync<State>("config.json");
+    public async Task<State> GetLatest() => await httpClient.GetFromJsonAsync<State>("https://raw.githubusercontent.com/nederlandsespoorwegen/nstechevents/data/techtalks.json");
     
 
 }
