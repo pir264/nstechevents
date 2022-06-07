@@ -18,8 +18,22 @@ public class LiveSession
     {
         get
         {
-            var a = DateTimeOffset.UtcNow;
             return DateTimeOffset.UtcNow >= Start && DateTimeOffset.UtcNow <= End;
+        }
+    }
+
+    public bool IsComingUp
+    {
+        get
+        {
+            return DateTimeOffset.UtcNow <= Start;
+        }
+    }
+    public bool IsJustPassed
+    {
+        get
+        {
+            return DateTimeOffset.UtcNow >= End && DateTimeOffset.UtcNow.Date == End.Date;
         }
     }
 }

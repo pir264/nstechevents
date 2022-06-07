@@ -1,0 +1,58 @@
+@using Ical.Net
+@using Ical.Net.CalendarComponents
+@using Ical.Net.DataTypes
+@using Ical.Net.Serialization
+
+@if (IsValid)
+{
+    <a class="@Class" href="@dataUrl" download="@Filename">@ChildContent</a>
+}
+@code
+{
+    [Parameter] public string Class { get; set; }
+    [Parameter] public DateTime? Start { get; set; }
+
+    [Parameter] public DateTime? End { get; set; }
+
+    [Parameter] public string Summary { get; set; }
+
+    [Parameter] public string Description { get; set; }
+
+    [Parameter] public string Location { get; set; }
+
+    [Parameter] public RenderFragment ChildContent { get; set; }
+
+    [Parameter] public string Filename { get; set; } = "Calendar.ics";
+
+    string dataUrl => GetDataUrl();
+
+    string GetDataUrl()
+    {
+        var cal = new Calendar();
+        var evt = new CalendarEvent()
+        {
+            Start = new CalDateTime(Start.Value),
+            End = new CalDateTime(End.Value),
+            Location = Location,
+            Description = Description + $"\nJoin Live Event: {Location}",
+            Summary = Summary
+        };
+        @* var property = new CalendarProperty("X-ALT-DESC", formatted);
+        evt.AddProperty(property); *@
+        cal.Events.Add(evt);
+        return GetDataUrl(cal);
+    }
+
+    public static string GetDataUrl(Calendar calendar)
+    {
+        var serializer = new CalendarSerializer();
+        var text = serializer.SerializeToString(calendar);
+        //text = text.Replace("X-ALT-DESC:FMTTYPE=text/html", "X-ALT-DESC;FMTTYPE=text/html");
+        var data = System.Text.Encoding.UTF8.GetBytes(text);
+        var base64 = Convert.ToBase64String(data);
+        return $"data:text/calendar;base64,{base64}";
+    }
+
+
+    bool IsValid => (Start.HasValue && End.HasValue);
+}

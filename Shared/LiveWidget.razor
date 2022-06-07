@@ -1,5 +1,7 @@
+@using System.Timers;
+
 <style>
-    .live-widget{
+    .live-widget {
         background-color: #ccc;
         background-image: url('img/backdrop.png');
         background-repeat: no-repeat;
@@ -8,40 +10,114 @@
         color: #fff;
         text-decoration: none;
     }
-    .live-widget:hover{
-        
+
+    :focus-visible {
+        outline: none;
+    }
+    .live-widget:hover {
+
         color: #fff;
     }
 
-    .play-button{
+    .play-button {
         color: #fff;
     }
-     .play-button:hover{
+
+    .play-button:hover {
         color: #90EE90;
     }
 </style>
 
-    <a href="@Link"  class="live-widget row py-5 ">
-       
-        <div class="col-lg-6 col-md-8 mx-auto">
+<a href="@Session.Link" class="live-widget row py-5 ">
+
+    <div class="col-lg-6 col-md-8 mx-auto">
+        @if (Session.IsComingUp)
+        {
+            <span class="badge text-bg-success">COMING UP</span>
+        }
+        else if (Session.IsLive)
+        {
             <span class="badge text-bg-danger">NOW LIVE</span>
-            <h1 class="fw-light">@Title</h1>
-           
-                
-                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="play-button bi bi-play-circle-fill" viewBox="0 0 16 16">
-  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
-</svg>
-            
-            
-        </div>
-    
-    </a>
+        }
+        else if (Session.IsJustPassed)
+        {
+            <span class="badge text-bg-primary">ENDED</span>
+        }
 
-    @code {
-        [Parameter]
-        public string Title { get; set; }
+        <h1>@Session.Title</h1>
 
-        [Parameter]
-        public string Link { get; set; }
+        @if (Session.IsJustPassed || Session.IsLive)
+        {
+            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
+            class="play-button bi bi-play-circle-fill" viewBox="0 0 16 16">
+                <path
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
+            </svg>
+        }
+        else if (Session.IsComingUp)
+        {
+
+
+            <p>@countdown</p>
+
+            <ICalendarQuick Class="btn btn-primary" Location="@Session.Link" Start="@Session.Start.LocalDateTime" End="@Session.End.LocalDateTime" Filename="session.ics" Description="@Session.Title"
+            Summary="@Session.Title"><i class="bi bi-calendar2-check-fill"></i> Add to
+            calendar</ICalendarQuick>
+        }
+
+
+
+    </div>
+
+</a>
+
+@code {
+    [Parameter]
+    public LiveSession Session { get; set; }
+
+    public string countdown;
+
+
+    void HandleTimer(object source, ElapsedEventArgs e)
+    {
+        var timeToEvent = Session.Start.Subtract(DateTimeOffset.Now);
+        var days = string.Empty;
+        var hours = string.Empty;
+        var mins = string.Empty;
+        var secs = string.Empty;
+
+        if (timeToEvent.Days >= 1)
+        {
+            days = $"{timeToEvent.Days} day{(timeToEvent.Days > 1 ? "s" : string.Empty)} ";
+        }
+        if (timeToEvent.Hours >= 1)
+        {
+            hours = $"{timeToEvent.Hours} hour{(timeToEvent.Hours > 1 ? "s" : string.Empty)} ";
+        }
+        if (timeToEvent.Minutes >= 1)
+        {
+            mins = $"{timeToEvent.Minutes} minute{(timeToEvent.Minutes > 1 ? "s" : string.Empty)} ";
+        }
+        if (timeToEvent.Seconds >= 1)
+        {
+            secs = $"{timeToEvent.Seconds} second{(timeToEvent.Seconds > 1 ? "s" : string.Empty)}";
+        }
+
+        countdown = $"{days}{hours}{mins}{secs}";
+
+
+
+        base.StateHasChanged();
     }
 
+    protected override void OnInitialized()
+    {
+        var timer = new Timer();
+        timer.Interval = 1000; // every 5 mins
+        timer.Elapsed += HandleTimer;
+        timer.AutoReset = true;
+        timer.Enabled = true;
+        timer.Start();
+
+    }
+}

@@ -40,7 +40,7 @@ public class PeriodicExecutor : IDisposable
     {
         // Execute required job
         var state = await stateService.GetLatest();
-
+        //state.Live.Start = DateTimeOffset.Now.AddSeconds(30);
         // Notify any subscribers to the event
         OnJobExecuted(state);
     }

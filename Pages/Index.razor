@@ -11,9 +11,9 @@
     }
 </style>
 <section class="text-center container">
-    @if (State.Live.IsLive)
+    @if (State.Live != null || DateTimeOffset.UtcNow.Date == State.Live.Start.Date)
     {
-        <LiveWidget Title="@State.Live.Title" Link="@State.Live.Link" />
+        <LiveWidget Session="@State.Live"  />
     }
     else
     {
