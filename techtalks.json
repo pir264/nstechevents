@@ -5,6 +5,7 @@
       "start": "2022-06-03T02:50:00.000Z",
       "end": "2022-06-08T02:50:00.000Z"
     },
+    "featured" : "",
     "techTalks": {
         "live": {
           "title": "TechTalks test broadcast",
