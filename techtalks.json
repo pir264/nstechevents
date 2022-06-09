@@ -1,12 +1,14 @@
 {
     "featuredVideo" : "",
-    "techTalks": {
-        "live": {
+    "live": {
+        "techTalk": {
           "title": "TechTalks test broadcast",
           "link": "https://go.nstech.events/tt",
           "start": "2022-06-03T02:50:00.000Z",
           "end": "2022-06-04T02:50:00.000Z"
-        },
+        }
+    }
+    "techTalks": {
         "featuredVideo": ""
     },
     "techBits": {
