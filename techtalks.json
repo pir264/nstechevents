@@ -5,10 +5,10 @@
         "channelUrl": "https://web.microsoftstream.com/embed/channel/33f159ae-3ef0-4b20-89b4-3a36ad9580ae?sort=trending",
         "featuredVideo": "https://web.microsoftstream.com/embed/video/c641050f-5232-434e-95ad-4ac681acef74?autoplay=false&showinfo=false",
         "live": {
-          "title": "TechTalks test broadcast",
+          "title": "TechTalks June",
           "link": "https://go.nstech.events/tt",
-          "start": "2022-06-09T12:00:00.000Z",
-          "end": "2022-06-09T14:00:00.000Z"
+          "start": "2022-06-15T08:00:00.000Z",
+          "end": "2022-06-15T09:00:00.000Z"
         }
     },
     "techBits": {
