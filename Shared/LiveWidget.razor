@@ -14,6 +14,7 @@
     :focus-visible {
         outline: none;
     }
+
     .live-widget:hover {
 
         color: #fff;
@@ -56,13 +57,16 @@
         }
         else if (Session.IsComingUp)
         {
+            <h4>@Session.Start.LocalDateTime.ToString("ddd dd MMM yyyy HH:mm")</h4>
+            <p>
+                <ICalendarQuick Class="btn btn-primary" Location="@Session.Link" Start="@Session.Start.LocalDateTime"
+                End="@Session.End.LocalDateTime" Filename="session.ics" Description="@Session.Title"
+                Summary="@Session.Title"><i class="bi bi-calendar2-check-fill"></i> Add to
+                    calendar</ICalendarQuick>
+            </p>
+            <h5>@countdown</h5>
 
 
-            <p>@countdown</p>
-
-            <ICalendarQuick Class="btn btn-primary" Location="@Session.Link" Start="@Session.Start.LocalDateTime" End="@Session.End.LocalDateTime" Filename="session.ics" Description="@Session.Title"
-            Summary="@Session.Title"><i class="bi bi-calendar2-check-fill"></i> Add to
-            calendar</ICalendarQuick>
         }
 
 

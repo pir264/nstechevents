@@ -1,8 +1,22 @@
 using System.Text.Json.Serialization;
 
-public class State
+public class TechEvent {
+    public string FeaturedVideo { get; set; }
+    public string ChannelUrl { get; set; }
+}
+
+public class LiveEvent: TechEvent
 {
     public LiveSession Live { get; set; } = new();
+}
+
+
+public class State
+{
+
+    public string FeaturedVideo { get; set; }
+    public LiveEvent TechTalks { get; set; } = new();
+    public TechEvent TechBits { get; set; } = new();
 }
 
 public class LiveSession

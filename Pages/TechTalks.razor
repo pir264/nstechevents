@@ -3,28 +3,23 @@
 
 <PageTitle>NS Tech Events - TechTalks</PageTitle>
 <section class="text-center container">
-    @if (State.Live.IsLive)
+    @if (State.TechTalks.Live.IsLive)
     {
-        <LiveWidget Title="@State.Live.Title" Link="@State.Live.Link" />
+        <LiveWidget Session="State.TechTalks.Live" />
     }
     else
     {
 
-        <iframe width="853" height="480" src="https://web.microsoftstream.com/embed/video/c641050f-5232-434e-95ad-4ac681acef74?autoplay=false&showinfo=false" allowfullscreen style="border:none;"></iframe>
+        <iframe width="853" height="480" src="@State.TechTalks.FeaturedVideo" allowfullscreen style="border:none;"></iframe>
 
 
     }
 </section>
 
     
-<div>
-    <div style='position: relative; padding-bottom: 80%;  overflow: hidden;'>
-        <iframe width="100%" class="iframe"
-            src="https://web.microsoftstream.com/embed/channel/33f159ae-3ef0-4b20-89b4-3a36ad9580ae?sort=date"
-            allowfullscreen
-            style='border:none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100%; max-width: 100%;'></iframe>
-    </div>
-</div>
+<section class="text-center container">
+    <ChannelCollection Session="State.TechTalks"/>
+</section>
 
 @code {
     [CascadingParameter]

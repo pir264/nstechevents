@@ -11,26 +11,30 @@
     }
 </style>
 <section class="text-center container">
-    @if (State.Live != null || DateTimeOffset.UtcNow.Date == State.Live.Start.Date)
+    @if (State?.TechTalks?.Live != null && DateTimeOffset.UtcNow.Date == State?.TechTalks?.Live?.Start.Date)
     {
-        <LiveWidget Session="@State.Live"  />
+        <LiveWidget Session="@State.TechTalks.Live"  />
     }
     else
     {
 
-        <iframe width="853" height="480" src="https://web.microsoftstream.com/embed/video/c641050f-5232-434e-95ad-4ac681acef74?autoplay=false&showinfo=false" allowfullscreen style="border:none;"></iframe>
+        <iframe width="853" height="480" src="@State.TechTalks.FeaturedVideo" allowfullscreen style="border:none;"></iframe>
 
 
     }
 </section>
 <section class="container thumb-slider">
-    <div style='position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;'><iframe width="100%" height="400" src="https://web.microsoftstream.com/embed/channel/33f159ae-3ef0-4b20-89b4-3a36ad9580ae?sort=trending" allowfullscreen style='border:none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 400px; max-width: 100%;'></iframe></div>
+    <div style='position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;'>
+        <iframe width="100%" height="400" src="@State.TechTalks.ChannelUrl" allowfullscreen style='border:none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 400px; max-width: 100%;'></iframe></div>
 </section>
 <section class="container thumb-slider">
-    <div style='position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;'><iframe width="100%" height="400" src="https://web.microsoftstream.com/embed/channel/2e02816b-554e-4781-8e11-82262222d920?sort=trending" allowfullscreen style='border:none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 400px; max-width: 100%;'></iframe></div>
+    <div style='position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;'>
+        <iframe width="100%" height="400" src="@State.TechBits.ChannelUrl" allowfullscreen style='border:none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 400px; max-width: 100%;'></iframe></div>
 </section>
 
 @code {
+
+
     [CascadingParameter]
     protected State? State { get; set; }
     }
