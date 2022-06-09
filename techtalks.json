@@ -1,5 +1,5 @@
 {
-    "featuredVideo" : "",
+    "featuredVideo" : "https://web.microsoftstream.com/embed/video/c641050f-5232-434e-95ad-4ac681acef74?autoplay=false&showinfo=false",
     "live": {
         "techTalk": {
           "title": "TechTalks test broadcast",
@@ -9,9 +9,11 @@
         }
     }
     "techTalks": {
-        "featuredVideo": ""
+        "channelUrl": "https://web.microsoftstream.com/embed/channel/33f159ae-3ef0-4b20-89b4-3a36ad9580ae?sort=trending",
+        "featuredVideo": "https://web.microsoftstream.com/embed/video/c641050f-5232-434e-95ad-4ac681acef74?autoplay=false&showinfo=false"
     },
     "techBits": {
+        "channelUrl": "https://web.microsoftstream.com/embed/channel/2e02816b-554e-4781-8e11-82262222d920?sort=trending",
         "featuredVideo": ""
     }
 }
