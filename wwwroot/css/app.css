@@ -1,5 +1,12 @@
 ﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
+.app-bar {
+    background-color: #003082!important;
+    background-image: url('app-bar-back.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    
+}
 
 #blazor-error-ui {
     background: lightyellow;

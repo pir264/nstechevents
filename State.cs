@@ -21,7 +21,9 @@ public class State
 
 public class LiveSession
 {
+    public bool Active { get; set; }
     public string Title { get; set; }
+    public string Summary { get; set; }
     public string Link { get; set; }
 
 

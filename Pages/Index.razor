@@ -11,7 +11,7 @@
     }
 </style>
 <section class="text-center container">
-    @if (State?.TechTalks?.Live != null && DateTimeOffset.UtcNow.Date == State?.TechTalks?.Live?.Start.Date)
+    @if (State.TechTalks.Live.Active)
     {
         <LiveWidget Session="@State.TechTalks.Live"  />
     }

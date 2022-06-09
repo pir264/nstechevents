@@ -46,6 +46,11 @@
         }
 
         <h1>@Session.Title</h1>
+        @foreach (var item in Session.Summary.Split("\n"))
+        {
+            <p>@item</p>
+        }
+        
 
         @if (Session.IsJustPassed || Session.IsLive)
         {
