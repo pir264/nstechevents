@@ -3,9 +3,9 @@
 
     "techTalks": {
         "channelUrl": "https://web.microsoftstream.com/embed/channel/33f159ae-3ef0-4b20-89b4-3a36ad9580ae?sort=date",
-        "featuredVideo": "https://web.microsoftstream.com/embed/video/c641050f-5232-434e-95ad-4ac681acef74?autoplay=false&showinfo=false",
+        "featuredVideo": "https://web.microsoftstream.com/embed/video/e72e1e5f-8120-4d53-a589-41a62f2d7598",
         "live": {
-          "active":true,  
+          "active":false,  
           "title": "TechTalks June",
           "summary": "Template portfolio management in JIRA Plans\nARM yourself with Bicep",
           "link": "https://go.nstech.events/tt",
