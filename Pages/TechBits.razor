@@ -2,9 +2,18 @@
 
 <PageTitle>NS Tech Events - TechBits</PageTitle>
 
-<div style='max-width: 1280px'>
-    <div style='position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;'>
-        <iframe width="1280" height="720" src="https://web.microsoftstream.com/embed/channel/2e02816b-554e-4781-8e11-82262222d920?sort=date" allowfullscreen style='border:none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100%; max-width: 100%;'>
-        </iframe>
-    </div>
-</div>
+<section class="text-center container">
+
+        <iframe width="853" height="480" src="@State.TechBits.FeaturedVideo" allowfullscreen style="border:none;"></iframe>
+
+</section>
+
+    
+<section class="text-center container">
+    <ChannelCollection Session="State.TechBits"/>
+</section>
+
+@code {
+    [CascadingParameter]
+    protected State? State { get; set; }
+    }
