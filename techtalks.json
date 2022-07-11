@@ -5,12 +5,12 @@
         "channelUrl": "https://web.microsoftstream.com/embed/channel/33f159ae-3ef0-4b20-89b4-3a36ad9580ae?sort=date",
         "featuredVideo": "https://web.microsoftstream.com/embed/video/e72e1e5f-8120-4d53-a589-41a62f2d7598?autoplay=false&showinfo=false",
         "live": {
-          "active":false,  
-          "title": "TechTalks June",
-          "summary": "Template portfolio management in JIRA Plans\nARM yourself with Bicep",
+          "active":true,  
+          "title": "TechTalks Aug",
+          "summary": "To be determined",
           "link": "https://go.nstech.events/tt",
-          "start": "2022-06-15T08:00:00.000Z",
-          "end": "2022-06-15T09:00:00.000Z"
+          "start": "2022-08-24T08:00:00.000Z",
+          "end": "2022-08-24T09:00:00.000Z"
         }
     },
     "techBits": {
