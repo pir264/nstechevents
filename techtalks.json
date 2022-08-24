@@ -1,9 +1,9 @@
 {
-    "featuredVideo" : "https://web.microsoftstream.com/video/ab7d5a3e-0891-43ee-9ea1-e3727212e700?autoplay=false&showinfo=false",
+    "featuredVideo" : "https://web.microsoftstream.com/embed/video/ab7d5a3e-0891-43ee-9ea1-e3727212e700?autoplay=false&showinfo=false",
 
     "techTalks": {
         "channelUrl": "https://web.microsoftstream.com/embed/channel/33f159ae-3ef0-4b20-89b4-3a36ad9580ae?sort=date",
-        "featuredVideo": "https://web.microsoftstream.com/video/ab7d5a3e-0891-43ee-9ea1-e3727212e700?autoplay=false&showinfo=false",
+        "featuredVideo": "https://web.microsoftstream.com/embed/video/ab7d5a3e-0891-43ee-9ea1-e3727212e700?autoplay=false&showinfo=false",
         "live": {
           "active":false,  
           "title": "TechTalks August 2022",
