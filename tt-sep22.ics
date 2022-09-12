@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+PRODID:-//github.com/rianjs/ical.net//NONSGML ical.net 4.0//EN
+VERSION:2.0
+BEGIN:VEVENT
+DESCRIPTION:TechTalks September 2022\nJoin Live Event: https://go.nstech.e
+ vents/tt
+DTEND:20220921T110000
+DTSTAMP:20220912T144101Z
+DTSTART:20220921T100000
+LOCATION:https://go.nstech.events/tt
+SEQUENCE:0
+SUMMARY:TechTalks September 2022
+UID:63ecf90b-22bb-4689-9244-f6d318ef7771
+END:VEVENT
+END:VCALENDAR
