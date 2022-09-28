@@ -5,7 +5,7 @@
         "channelUrl": "https://web.microsoftstream.com/embed/channel/33f159ae-3ef0-4b20-89b4-3a36ad9580ae?sort=date",
         "featuredVideo": "https://web.microsoftstream.com/embed/video/52f7f32c-2d5c-4e81-9cc7-a3765a1d306d?autoplay=false&showinfo=false",
         "live": {
-          "active":true,  
+          "active":false,  
           "title": "TechTalks September 2022",
           "summary": "Quality APIs Through Design, Test and Automation",
           "link": "https://go.nstech.events/tt",
