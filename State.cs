@@ -34,7 +34,7 @@ public class LiveSession
     {
         get
         {
-            return DateTimeOffset.UtcNow >= Start && DateTimeOffset.UtcNow <= End;
+            return DateTimeOffset.UtcNow.AddMinutes(5) >= Start && DateTimeOffset.UtcNow <= End;
         }
     }
 
