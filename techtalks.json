@@ -6,11 +6,11 @@
         "featuredVideo": "https://web.microsoftstream.com/embed/video/52f7f32c-2d5c-4e81-9cc7-a3765a1d306d?autoplay=false&showinfo=false",
         "live": {
           "active":true,  
-          "title": "TechTalks October 2022",
-          "summary": "Infrastructure-as-code vulnerability scanning",
-          "link": "https://go.nstech.events/tt",
-          "start": "2022-10-19T08:00:00.000Z",
-          "end": "2022-10-19T09:00:00.000Z"
+          "title": "Slack Day @ NS",
+          "summary": "Learn all about Workflow Builder and creating your own Slack Add-Ons",
+          "link": "https://go.nstech.events/slack-day",
+          "start": "2022-11-09T12:30:00.000Z",
+          "end": "2022-11-09T014:30:00.000Z"
         }
     },
     "techBits": {
