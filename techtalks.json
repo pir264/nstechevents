@@ -1,20 +1,20 @@
 {
-    "featuredVideo" : "https://web.microsoftstream.com/embed/video/52f7f32c-2d5c-4e81-9cc7-a3765a1d306d?autoplay=false&showinfo=false",
+    "featuredVideo" : "https://web.microsoftstream.com/video/23606922-5088-466e-bfe0-e07e714c7ab3?autoplay=false&showinfo=false",
 
     "techTalks": {
         "channelUrl": "https://web.microsoftstream.com/embed/channel/33f159ae-3ef0-4b20-89b4-3a36ad9580ae?sort=date",
         "featuredVideo": "https://web.microsoftstream.com/embed/video/52f7f32c-2d5c-4e81-9cc7-a3765a1d306d?autoplay=false&showinfo=false",
         "live": {
           "active":true,  
-          "title": "Slack Day @ NS",
-          "summary": "In-person event to learn about Workflow Builder and creating your own Slack Add-Ons",
-          "link": "https://go.nstech.events/slack-day",
-          "start": "2022-11-09T12:00:00.000Z",
-          "end": "2022-11-09T14:00:00.000Z"
+          "title": "Azure DevOps end-to-end",
+          "summary": "with CI/CD, SonarQube and Harbor",
+          "link": "https://go.nstech.events/tt",
+          "start": "2022-11-16T09:00:00.000Z",
+          "end": "2022-11-16T10:00:00.000Z"
         }
     },
     "techBits": {
         "channelUrl": "https://web.microsoftstream.com/embed/channel/2e02816b-554e-4781-8e11-82262222d920?sort=date",
-        "featuredVideo": "https://web.microsoftstream.com/embed/video/a260da62-5be6-48cd-8758-f5ce93e20593?autoplay=false&showinfo=false"
+        "featuredVideo": "https://web.microsoftstream.com/video/23606922-5088-466e-bfe0-e07e714c7ab3?autoplay=false&showinfo=false"
     }
 }
