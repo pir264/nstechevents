@@ -17,6 +17,7 @@ public class State
     public string FeaturedVideo { get; set; }
     public LiveEvent TechTalks { get; set; } = new();
     public TechEvent TechBits { get; set; } = new();
+    public TechEvent TechDays { get; set; } = new();
 }
 
 public class LiveSession

@@ -1,0 +1,18 @@
+﻿@page "/techdays"
+@inject StateService stateService
+
+<PageTitle>NS Tech Events - TechDays</PageTitle>
+<section class="text-center container">
+
+        <iframe width="853" height="480" src="@State.TechDays.FeaturedVideo" allowfullscreen style="border:none;"></iframe>
+
+
+    
+<section class="text-center container">
+    <ChannelCollection Session="State.TechDays"/>
+</section>
+
+@code {
+    [CascadingParameter]
+    protected State? State { get; set; }
+    }
