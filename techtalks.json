@@ -1,11 +1,11 @@
 {
-    "featuredVideo" : "https://web.microsoftstream.com/video/23606922-5088-466e-bfe0-e07e714c7ab3?autoplay=false&showinfo=false",
+    "featuredVideo" : "https://web.microsoftstream.com/video/21a8c4f4-956a-4f43-8a91-6cc87c4a4661?autoplay=false&showinfo=false",
 
     "techTalks": {
         "channelUrl": "https://web.microsoftstream.com/embed/channel/33f159ae-3ef0-4b20-89b4-3a36ad9580ae?sort=date",
-        "featuredVideo": "https://web.microsoftstream.com/embed/video/52f7f32c-2d5c-4e81-9cc7-a3765a1d306d?autoplay=false&showinfo=false",
+        "featuredVideo": "https://web.microsoftstream.com/embed/video/21a8c4f4-956a-4f43-8a91-6cc87c4a4661?autoplay=false&showinfo=false",
         "live": {
-          "active":true,  
+          "active":false,  
           "title": "Azure DevOps end-to-end",
           "summary": "with CI/CD, SonarQube and Harbor",
           "link": "https://go.nstech.events/tt",
