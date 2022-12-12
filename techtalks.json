@@ -5,12 +5,12 @@
         "channelUrl": "https://web.microsoftstream.com/embed/channel/33f159ae-3ef0-4b20-89b4-3a36ad9580ae?sort=date",
         "featuredVideo": "https://web.microsoftstream.com/embed/video/21a8c4f4-956a-4f43-8a91-6cc87c4a4661?autoplay=false&showinfo=false",
         "live": {
-          "active":false,  
-          "title": "Azure DevOps end-to-end",
-          "summary": "with CI/CD, SonarQube and Harbor",
+          "active":true,  
+          "title": "Tool vision and Paved Roads from CPO",
+          "summary": "Test Automatisering Toolvisie, Performance testen, Paved Roads, PlayWright en technische Demo. Het is een kennismaking met QES, onze visie vanuit CPO en presentatie van de Paved Roads.",
           "link": "https://go.nstech.events/tt",
-          "start": "2022-11-16T09:00:00.000Z",
-          "end": "2022-11-16T10:00:00.000Z"
+          "start": "2022-12-21T09:00:00.000Z",
+          "end": "2022-12-21T10:00:00.000Z"
         }
     },
     "techBits": {
