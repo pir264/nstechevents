@@ -5,7 +5,7 @@
         "channelUrl": "https://web.microsoftstream.com/embed/channel/33f159ae-3ef0-4b20-89b4-3a36ad9580ae?sort=date",
         "featuredVideo": "https://web.microsoftstream.com/embed/video/28c3b18c-4dc0-455e-b4a7-3d860eb8bcc1?autoplay=false&showinfo=false",
         "live": {
-          "active":false,  
+          "active":true,  
           "title": "Great new features in Miro",
           "summary": "Save more time, and collaborate better with colleagues (a-)sync with Miro! Join this Techtalk to receive an update and demo on the latest Miro features. Get tips on your Miro settings, engaging ice breakers for your meetings and handy apps to automate content creation.",
           "link": "https://go.nstech.events/tt",
